@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour {
     public void Restart()
     {
         Time.timeScale = 1;
-        enemy.transform.position = new Vector3(0, 2, 0);
+        enemy.transform.position = new Vector3(0, 2, -10);
         player.transform.position = new Vector3(0, 2, 10);
         youAreDead.gameObject.SetActive(false);
         restart.gameObject.SetActive(false);

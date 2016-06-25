@@ -9,8 +9,8 @@ public class ThunderControl : MonoBehaviour {
 
 	void Start () {
 
-        InvokeRepeating("PlayThunderSound", 3.5f, thunderRepeat);
-        InvokeRepeating("PlayThunder", 4, thunderRepeat);
+        InvokeRepeating("PlayThunderSound", 4, thunderRepeat);
+        InvokeRepeating("PlayThunder", 3.5f, thunderRepeat);
 	}
 	
 	void Update () {
