@@ -19,7 +19,7 @@ public class EnemyControl : MonoBehaviour {
         int xPos = Random.Range(maxXPos*-1, maxXPos);
         int zPos = Random.Range(maxZPos*-1, maxZPos);
 
-        gameObject.transform.position = new Vector3(xPos, 0, zPos);
+        gameObject.transform.position = new Vector3(xPos, 1, zPos);
     }
 
 }
