@@ -7,13 +7,10 @@ public class EnemyControl : MonoBehaviour {
     int maxZPos = 20;
 
 	void Start () {
-        InvokeRepeating("RandomSpawn",1,5);
+        InvokeRepeating("RandomSpawn",5,5);
 	}
 	
-	void Update () {
 	
-	}
-
     public void RandomSpawn()
     {
         int xPos = Random.Range(maxXPos*-1, maxXPos);
