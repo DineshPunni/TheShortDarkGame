@@ -9,7 +9,7 @@ public class GeneralMusicController : MonoBehaviour {
 
     void Start()
     {
-        source.Play(44100 * 10);
+        source.PlayDelayed(44100 * 10);
     }
 
     void Awake ()

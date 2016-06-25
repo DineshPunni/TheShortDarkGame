@@ -30,6 +30,6 @@ public class ThunderControl : MonoBehaviour {
             yield return null;
         }
         thunder.SetActive(false);
-        thunderTimer = 0.5fa;
+        thunderTimer = 0.5f;
     }
 }
