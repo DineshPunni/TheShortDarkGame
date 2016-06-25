@@ -3,15 +3,14 @@ using System.Collections;
 
 public class GeneralMusicController : MonoBehaviour {
 
-    public AudioClip backgroundSound;
     public AudioSource source;
     private float volStart = .5f;
     private float volMax = 1.0f;
 
-	// Use this for initialization
-	void Start () {
-	    
-	}
+    void Start()
+    {
+        source.Play(44100 * 10);
+    }
 
     void Awake ()
     {
@@ -20,6 +19,9 @@ public class GeneralMusicController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+        if (source.isPlaying && source.volume <= volMax)
+        {
+            source.volume = volStart + .01f;
+        }
 	}
 }
