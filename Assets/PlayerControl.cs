@@ -21,7 +21,8 @@ public class PlayerControl : MonoBehaviour
     {
         if(collision.gameObject.tag== "Enemy")
         {
-            LevelManager.instance.LoadLevel("MainMenu");
+            //LevelManager.instance.LoadLevel("MainMenu");
+            GameManager.instance.GameOver();
         }
     }
 
