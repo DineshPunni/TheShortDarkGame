@@ -21,7 +21,7 @@ public class EnemyControl : MonoBehaviour {
             int xPos = Random.Range((int)target.position.x - 10, (int)target.position.x + 10);
             int zPos = Random.Range((int)target.position.z - 10, (int)target.position.z + 10);
 
-            gameObject.transform.position = new Vector3(xPos, 1, zPos);
+            gameObject.transform.position = new Vector3(xPos, 2, zPos);
 
             if (Vector3.Distance(gameObject.transform.position, target.position) > 3)
             {
