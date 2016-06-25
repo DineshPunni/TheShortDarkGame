@@ -21,7 +21,7 @@ public class EnemyControl : MonoBehaviour {
         Debug.Log(jumpscare);
         if (jumpscare == 2 || jumpscare == 1)
         {
-            StartCoroutine(JumpscareRoutine());
+           // StartCoroutine(JumpscareRoutine());
         }
 
         while (!succesSpawn)
@@ -57,6 +57,7 @@ public class EnemyControl : MonoBehaviour {
     public void Move()
     {
         transform.position = Vector3.MoveTowards(transform.position, target.position, speed *Time.deltaTime);
+        transform.LookAt(target.position);
     }
 
 }
