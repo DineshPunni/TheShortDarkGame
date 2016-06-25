@@ -4,11 +4,13 @@ using System.Collections;
 public class ThunderControl : MonoBehaviour {
 
     public float thunderTimer = 1;
+    public float thunderRepeat;
     public GameObject thunder;
 
 	void Start () {
 
-        InvokeRepeating("PlayThunder", 1, 5);
+        InvokeRepeating("PlayThunderSound", 3.5f, thunderRepeat);
+        InvokeRepeating("PlayThunder", 4, thunderRepeat);
 	}
 	
 	void Update () {
@@ -30,6 +32,12 @@ public class ThunderControl : MonoBehaviour {
             yield return null;
         }
         thunder.SetActive(false);
-        thunderTimer = 0.5fa;
+        thunderTimer = 0.5f;
+    }
+
+
+    void PlayThunderSound()
+    {
+        GetComponent<AudioSource>().Play();
     }
 }

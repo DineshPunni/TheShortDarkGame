@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerControl : MonoBehaviour
 {
-
+    public bool hasKey=false;
     // Use this for initialization
     void Start()
     {
@@ -21,8 +21,23 @@ public class PlayerControl : MonoBehaviour
     {
         if(collision.gameObject.tag== "Enemy")
         {
-            //LevelManager.instance.LoadLevel("MainMenu");
             GameManager.instance.GameOver();
+        }
+
+        if ((collision.gameObject.tag == "Door") && hasKey)
+        {
+            Destroy(collision.gameObject);
+            GameManager.instance.YouWon();
+        }
+     
+    }
+
+    void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.tag == "Key")
+        {
+            Destroy(collision.gameObject);
+            hasKey = true;
         }
     }
 

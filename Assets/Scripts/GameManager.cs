@@ -24,13 +24,16 @@ public class GameManager : MonoBehaviour {
         DontDestroyOnLoad(gameObject);
     }
 
-	void Start () {
 	
-	}
-	
-	void Update () {
-	
-	}
+    public void YouWon()
+    {
+        Time.timeScale = 0;
+        youAreDead.text = "You Won";
+        youAreDead.color = Color.green;
+        youAreDead.gameObject.SetActive(true);
+        restart.gameObject.SetActive(true);
+
+    }
 
 
 
@@ -38,6 +41,8 @@ public class GameManager : MonoBehaviour {
     public void GameOver()
     {
         Time.timeScale = 0;
+        youAreDead.text = "You are Dead";
+        youAreDead.color = Color.red;
         youAreDead.gameObject.SetActive(true);
         restart.gameObject.SetActive(true);
     }

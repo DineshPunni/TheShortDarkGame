@@ -3,10 +3,11 @@ using System.Collections;
 
 public class EnemyControl : MonoBehaviour {
 
-    int maxXPos = 20;
-    int maxZPos = 20;
+    int maxXPos = 10;
+    int maxZPos = 10;
     public float speed;
     public Transform target;
+    bool succesSpawn = false;
 
 	void Start () {
         InvokeRepeating("RandomSpawn",5,5);
@@ -15,10 +16,20 @@ public class EnemyControl : MonoBehaviour {
 	
     public void RandomSpawn()
     {
-        int xPos = Random.Range(maxXPos*-1, maxXPos);
-        int zPos = Random.Range(maxZPos*-1, maxZPos);
+        while (!succesSpawn)
+        {
+            int xPos = Random.Range((int)target.position.x - 10, (int)target.position.x + 10);
+            int zPos = Random.Range((int)target.position.z - 10, (int)target.position.z + 10);
 
-        gameObject.transform.position = new Vector3(xPos, 1, zPos);
+            gameObject.transform.position = new Vector3(xPos, 1, zPos);
+
+            if (Vector3.Distance(gameObject.transform.position, target.position) > 3)
+            {
+                succesSpawn = true;
+            }
+                
+        }
+        succesSpawn = false;
     }
 
     void Update()
